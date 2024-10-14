@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .item {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-duration: 3s;
+  animation-name: slideup;
+  /* transition: ease-in 400ms; */
+/* } */
+
+/* .item:hover {
+  transform: translate(-40%, -20%);
+  transition: ease-out 200ms;
+} */
+
+/* @keyframes slideup {
+  from {
+    translate: 0 150vh;
+    scale: 400% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+} */
+
+img {
+  /* width: 600px;
+  transition: ease-out 500ms; */
+  /* filter: blur(10px); */
+  /* filter: brightness(10%); */
+  /* filter: contrast(10%); */
+  /* filter: drop-shadow(0 0 10px black); */
+  /* filter: grayscale(10%); */
+  /* filter: sepia(10%); */
+  /* filter: invert(10%); */
+  /* filter: saturate(400%); */
+  /* filter: opacity(50%); */
+  /* filter: hue-rotate(90deg); */
+}
+
+.parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.parent,
+.parent img,
+.overlay {
+  width: 400px;
+  height: 400px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: ease-in 400ms;
+}
+
+.parent:hover .overlay {
+  opacity: 1;
+}
+
+.parent:hover img {
+  scale: 1.2;
+  transition: ease-in 200ms;
+}
+
+.parent:hover .overlayItems {
+  transform: translateX(20px);
+  transition: ease-in 400ms;
+}
