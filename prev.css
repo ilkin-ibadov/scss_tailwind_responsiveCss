@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+}
+
+.grid-item {
+  width: 100%;
+  /* height: 300px; */
+  height: 100%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-template-rows: repeat(4, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+
+.grid-item:nth-child(1) {
+  grid-column: span 2;
+}
+
+.grid-item:nth-child(5) {
+  grid-row: span 2;
+}
+
+/* Ekran ölçüsü 600px və ya daha kiçik ekranlar üçün*/
+@media (max-width: 600px) {
+  body {
+    background-color: red;
+    font-size: 14px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-item:nth-child(3) {
+    background-color: blue;
+  }
+}
+
+/* Ekran ölçüse 600px və 768px arasında olan ekranlar üçün */
+@media (min-width: 600px) and (max-width: 768px) {
+  body {
+    background-color: black;
+    font-size: 18px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ekran ölçüsü 768px-dən böyük ekranlar üçün */
+@media (min-width: 769px) {
+  body {
+    background-color: lightgreen;
+    font-size: 36px;
+  }
+}
+
+/* Əsas breakpoint-lər: 
+- 0-600px Mobil cihazlar,
+
+- 600-768px Kiçik ölçülü tabletlər,
+- 768-1024px Orta ölçülü tabletlər,
+- 1024-1440px Desktop və ya laptop,
+- >1440px 2k-4k ekranlar*/

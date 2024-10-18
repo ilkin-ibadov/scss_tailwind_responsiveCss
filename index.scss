@@ -1,0 +1,44 @@
+@import "variables";
+@import "mixins";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+  font-size: $font-size;
+}
+
+h1 {
+  font-size: $header-size;
+
+  span {
+    color: green;
+  }
+}
+
+body {
+  @include flex-center;
+  height: 100vh;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.success {
+  @extend .button;
+  background-color: green;
+}
+
+.error {
+  @extend .button;
+  background-color: red;
+}
+
+$base-padding: 10px;
+
+.container {
+  padding: $base-padding * 2; // Result: 20px
+  margin-top: $base-padding + 5px; // Result: 15px
+}
